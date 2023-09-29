@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="responsive">
+
+            <!-- <button (click)="changeemilio(false)" >update emilio</button>
+
+            <app-dialog [hidden]="astroApiService.emilio"></app-dialog> -->
+
+            <div>
+
+                <label>Name</label>
+                <input type="text" name="name" class="form-control" placeholder="nombre" [(ngModel)]="objectProduct.name" required #name="ngModel">
+
+                <label>Description</label>
+                <input type="text" name="age" class="form-control" placeholder="age" [(ngModel)]="objectProduct.description" required #name="ngModel">
+
+                <label>Sku</label>
+                <input type="text" name="nationality" class="form-control" placeholder="nacionalidad" [(ngModel)]="objectProduct.sku" required #name="ngModel">
+
+                <label>Imagen</label>
+                <textarea name="bio" class="form-control" placeholder="bio" [(ngModel)]="objectProduct.imagen" required #name="ngModel"></textarea>
+             
+                <label>Type</label>
+                <input type="text" name="type" class="form-control" placeholder="type" [(ngModel)]="objectProduct.type" required #name="ngModel">
+
+                <label>Price</label>
+                <input type="text" name="price" class="form-control" placeholder="price" [(ngModel)]="objectProduct.price" required #name="ngModel">
+
+                <button class="btn btn-outline-success" (click)="editProduct()" >update</button>
+
+            </div>
+    </div>
+</div>
+
+{{this.superApi.getOneProduct | json}}
+
+{{this.superApi.copyOlds | json}}

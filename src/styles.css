@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@media (max-width: 430px) {
+    table {
+        width: 100%;
+        font-size: 10px;
+    }
+    .mat-mdc-table .mat-mdc-header-cell{
+        font-size: 10px;
+    }
+
+    button {
+        font-size: 10px !important
+    }
+}

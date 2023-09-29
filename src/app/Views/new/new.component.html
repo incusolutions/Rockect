@@ -1,0 +1,33 @@
+
+<div class="container">
+    <div class="responsive">
+
+            <!-- <button (click)="changeemilio(false)" >update emilio</button>
+
+            <app-dialog [hidden]="astroApiService.emilio"></app-dialog> -->
+
+            <div>
+
+                <label>name</label>
+                <input type="text" name="name" class="form-control" placeholder="nombre" [(ngModel)]="objectNewProduct.name" required #name="ngModel">
+
+                <label>description</label>
+                <input type="text" name="description" class="form-control" placeholder="Description" [(ngModel)]="objectNewProduct.description" required #name="ngModel">
+
+                <label>sku</label>
+                <input type="number" name="sku" class="form-control" placeholder="sku" [(ngModel)]="objectNewProduct.sku" required #name="ngModel">
+
+                <label>imagen</label>
+                <textarea name="imagen" class="form-control" placeholder="Imagen" [(ngModel)]="objectNewProduct.imagen" required #name="ngModel"></textarea>
+             
+                <label>type</label>
+                <input type="text" name="type" class="form-control" placeholder="Type" [(ngModel)]="objectNewProduct.type" required #name="ngModel">
+
+                <label>price</label>
+                <input type="number" name="price" class="form-control" placeholder="Price" [(ngModel)]="objectNewProduct.price" required #name="ngModel">
+
+                <button class="btn btn-outline-success" (click)="newProduct()" >Nuevo</button>
+
+            </div>
+    </div>
+</div>
