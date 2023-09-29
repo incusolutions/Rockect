@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Router } from '@angular/router';
 import {showLoadingMessage, showMessage, showMessageWithRedirect } from 'src/app/helpers/messages';
 
+import { environment } from 'src/enviroments/environment';
+
 
 import { Products } from './Interfaces/products';
 import { NewProducts } from './Interfaces/newproducts';
@@ -32,7 +34,7 @@ export class RockectService {
   copyOlds:any = {}
 
   getProducts(){
-    axios.get("http://localhost:3010/api/getAll", { 
+    axios.get(`${environment.url}/getAll`, { 
         headers: { "Content-Type": "application/json"
     } }
     ).then(succ => {
@@ -61,8 +63,7 @@ export class RockectService {
 
   updateProduct(id:string,obj:Products,oldobj:Products ){
 
-
-     axios.patch("http://localhost:3010/api/update/"+id, JSON.stringify(obj),{
+     axios.patch(`${environment.url}/update/`+id, JSON.stringify(obj),{
        headers: { "Content-Type": "application/json" }
      
      }).then(success=>{
@@ -102,7 +103,7 @@ export class RockectService {
       console.log(JSON.stringify(obj));
       console.log(oldobj);
 
-      axios.post("http://localhost:3010/api/logchange/",JSON.stringify(log),{
+      axios.post(`${environment.url}/logchange/` ,JSON.stringify(log),{
        headers: { "Content-Type": "application/json" }
      
      }).then(success=>{
@@ -125,7 +126,7 @@ export class RockectService {
     console.log(id);
     
 
-    axios.delete("http://localhost:3010/api/delete/"+id, {
+    axios.delete(`${environment.url}/delete/`+id, {
       headers: { "Content-Type": "application/json" }
     
     }).then(success=>{
@@ -146,7 +147,7 @@ export class RockectService {
 
  newPro(obj:NewProducts){
 
-  axios.post("http://localhost:3010/api/new/",JSON.stringify(obj),{
+  axios.post(`${environment.url}/new/`,JSON.stringify(obj),{
     headers: { "Content-Type": "application/json" },
   }).then(success=>{
     showMessage( "Se crea nuevo producto!","nuevo producto", "success");
