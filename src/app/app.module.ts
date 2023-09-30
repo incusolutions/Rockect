@@ -12,7 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 
-import { MatTableModule } from '@angular/material/table' 
+import { MatTableModule } from '@angular/material/table';
+import { LogsComponent } from './Views/logs/logs.component' 
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { MatTableModule } from '@angular/material/table'
     AppComponent,
     ShowComponent,
     NewComponent,
-    EditComponent
+    EditComponent,
+    LogsComponent
   ],
   imports: [
     MatPaginatorModule,

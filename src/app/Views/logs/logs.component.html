@@ -1,0 +1,36 @@
+
+<table class="table table-dark">
+    <thead>
+       
+
+        <tr>
+            <th scope="col">date</th>
+            <th scope="col">product_id</th>
+            <th scope="col">productname</th>
+            <th scope="col">newprice</th>
+            <th scope="col">oldprice</th>
+            <th scope="col">newsku</th>
+            <th scope="col">oldsku</th>
+           
+        </tr>
+
+
+    </thead>
+
+
+     <tbody>
+        <tr *ngFor="let object of superApi.Logsdata">
+           
+            <td>{{object.date}}</td>
+            <td>{{object.product_id}}</td>
+            <td>{{object.productname}}</td>
+
+            <td>{{object.newprice}}</td>
+            <td>{{object.oldprice}}</td>
+            <td>{{object.newsku}}</td>
+            <td>{{object.oldsku}}</td>
+     
+           
+         </tr>
+    </tbody>  
+</table> 

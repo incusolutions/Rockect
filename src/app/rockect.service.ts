@@ -8,6 +8,7 @@ import { environment } from 'src/enviroments/environment';
 
 import { Products } from './Interfaces/products';
 import { NewProducts } from './Interfaces/newproducts';
+import { Logs } from './Interfaces/logs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,8 @@ export class RockectService {
   constructor(private router: Router) { }
 
   productsempty:Products[] = [];
+  
+  Logsdata:Logs[] = [];
 
   productscopy:any[] = [];
 
@@ -156,7 +159,7 @@ export class RockectService {
     this.router.navigate(['']);
     
   }).catch(error=>{
-    showMessage( "Error creando producto!","error producto", "error");
+    showMessage( "Error creando producto!","Uno o varios productos esta vacios", "error");
 
     console.log(error)
 
@@ -164,7 +167,18 @@ export class RockectService {
 
  }
 
+ getLogs(){
+        axios.get(`${environment.url}/getlogs`, { 
+            headers: { "Content-Type": "application/json"
+        } }
+        ).then(succ => {
 
+          this.Logsdata = succ.data;
+        
+        }).catch(error => {
+          console.log(error)
+        });
+ }
 
 
 

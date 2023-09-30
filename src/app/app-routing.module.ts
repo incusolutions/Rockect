@@ -8,6 +8,8 @@ import { ShowComponent } from './Views/show/show.component';
 import { NewComponent } from './Views/new/new.component';
 import { EditComponent } from './Views/edit/edit.component'; 
 
+import { LogsComponent } from './Views/logs/logs.component';
+
 const routes: Routes = [
   {
     path:'',
@@ -24,6 +26,12 @@ const routes: Routes = [
   {
     path:'new',
     component: NewComponent
+    
+  },
+
+  {
+    path:'logs',
+    component: LogsComponent
     
   }
 ];
