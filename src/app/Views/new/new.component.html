@@ -2,11 +2,18 @@
 <div class="container">
     <div class="responsive">
 
-            <!-- <button (click)="changeemilio(false)" >update emilio</button>
+        <div class="row sticky-top" style="background: #dfdada;border-radius: 0px 0px 10px 10px;">
+            <div class="col-10">
+                <h1>Nuevo</h1>
+            </div>
+            <div class="col-2" style="text-align: right;display: flex;align-items: center;flex-direction: row-reverse;">
+                <button class="btn btn-outline-success" [routerLink]="'/'" >Inicio</button>
+            </div>
+           
+        </div>
 
-            <app-dialog [hidden]="astroApiService.emilio"></app-dialog> -->
-
-            <div>
+        <div class="row mt-3" >
+            <div class="col-12">
 
                 <label>name</label>
                 <input type="text" name="name" class="form-control" placeholder="nombre" [(ngModel)]="objectNewProduct.name" required #name="ngModel">
@@ -26,8 +33,9 @@
                 <label>price</label>
                 <input type="number" name="price" class="form-control" placeholder="Price" [(ngModel)]="objectNewProduct.price" required #name="ngModel">
 
-                <button class="btn btn-outline-success" (click)="newProduct()" >Nuevo</button>
+                <button class="btn btn-outline-success mt-3" (click)="newProduct()" >Nuevo</button>
 
             </div>
+        </div>
     </div>
 </div>

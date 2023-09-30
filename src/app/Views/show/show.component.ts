@@ -9,15 +9,11 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { Products } from 'src/app/Interfaces/products';
 
 
-interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
 
 interface Prod {
-  name: string;
+ 
+    _id:string;
+    name: string;
     description:string;
     sku:number;
     imagen:string;
@@ -35,24 +31,27 @@ interface Prod {
 
 export class ShowComponent {
 
+  constructor(public superApi: RockectService) {}
+
+
+
+  dataSource = new MatTableDataSource<any>();
+
+
 
   displayedColumns:  string[] = ['imagen','name','sku','precio','action'];
 
-
-  dataSource = new MatTableDataSource<any>(this.superApi.productsempty);
-    
-
+  
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-
-  constructor(public superApi: RockectService) {}
 
 
   search:string=''
 
 
   ngOnInit(): void {
-    this.superApi.getProducts();
 
+    this.superApi.getProducts();
+  
     
   }
 
@@ -70,11 +69,10 @@ export class ShowComponent {
 
 
     const resultadosFiltrados = this.superApi.productsempty.filter(objeto => {
-      // Convertimos el nombre y el nombre del objeto a minúsculas para hacer una comparación sin distinción entre mayúsculas y minúsculas
+      
       const nombreEnMinusculas = this.search.toLowerCase();
       const nombreObjetoEnMinusculas = objeto.name.toLowerCase();
       
-      // Verificamos si el nombre del objeto contiene el nombre a filtrar
       return nombreObjetoEnMinusculas.includes(nombreEnMinusculas);
     });
 
